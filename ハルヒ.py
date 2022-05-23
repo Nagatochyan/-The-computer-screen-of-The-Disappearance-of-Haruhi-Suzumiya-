@@ -1,11 +1,11 @@
 from time import sleep
 
-#引数に与えられた文字をYUKI.Nっぽく表示する
+
 def yuki_n(*message, speed=0.15):
     count = 0 #何行目を出力し終わったあとかを代入する変数
     name = "ＹＵＫＩ. Ｎ＞"
 
-    #1行目の出力に対して行う処理
+    
     msg = message[0]
 
     #名前を表示
@@ -14,7 +14,7 @@ def yuki_n(*message, speed=0.15):
         sleep(speed)
 
     for i in range(len(msg)):
-        #行の最後の文字の場合、文末に＿をつけない
+       
         if i == len(msg)-1:
             print(name + msg)
             sleep(speed)
@@ -25,11 +25,11 @@ def yuki_n(*message, speed=0.15):
             print("＿"+"\r",end="")
             sleep(speed)
 
-    #2行目以降の出力があれば行う処理
+    
     if len(message) > 1:
         for msg in message[1:]:
             for i in range(len(msg)):
-                    #行の最後の文字の場合、文末に＿をつけない
+                   
                     if i == len(msg)-1:
                         print("　　　　　　　" + msg)
                         sleep(speed)
@@ -40,12 +40,12 @@ def yuki_n(*message, speed=0.15):
                         print("＿"+"\r",end="")
                         sleep(speed)
 
-    #最後の行を出力し終わったあとに改行する
+    
     if count == len(message):
         print("")
 
 
-#「Ｒｅａｄｙ？」を表示する
+
 def ready(speed=0.5):
     ready = "Ｒｅａｄｙ？"
     #「_」を点滅させる
@@ -64,7 +64,7 @@ def ready(speed=0.5):
     print("　　　　　　　" + ready,end="")
 
 
-#改行する時は複数の引数としてyuki_n関数ににわたす
+
 yuki_n("これをあなたが読んでいる時、","わたしはわたしではないだろう。")
 yuki_n("このメッセージが表示されたということは、","そこにはあなた、わたし、涼宮ハルヒ、朝比奈みくる、","小泉一樹が存在しているはずである。")
 yuki_n("それが鍵。","あなたは回答を見つけ出した。")
